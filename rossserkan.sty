@@ -1,0 +1,230 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{serkan}
+
+\newif\ifserkancolor\serkancolortrue
+\newif\ifserkanlong\serkanlongfalse
+
+\DeclareOption{long}{\serkanlongtrue}
+\DeclareOption{colour}{\serkancolorfalse}
+
+\ProcessOptions\relax
+
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{array}
+\RequirePackage{mathtools}
+\RequirePackage[usenames,svgnames,dvipsnames,table]{xcolor}
+\RequirePackage{thmtools}
+\RequirePackage{mathrsfs}
+\RequirePackage{lmodern}
+\RequirePackage{hyperref}
+\RequirePackage[shortlabels]{enumitem}
+\RequirePackage{fancyhdr}
+\RequirePackage[a4paper, total={6in, 9in}]{geometry}
+\RequirePackage{tikz}
+\RequirePackage{tikz-cd}
+\RequirePackage{pgfplots}
+\RequirePackage{pdfpages}
+\RequirePackage{transparent}
+\RequirePackage{cleveref}
+\RequirePackage{cancel}
+\RequirePackage{import}
+\RequirePackage[unq]{unique}
+\RequirePackage[framemethod=TikZ]{mdframed}
+\RequirePackage[
+    backend=biber,
+    style=alphabetic, % acm if numbers
+]{biblatex}
+
+\usetikzlibrary{arrows,scopes,positioning,cd}
+
+\pagestyle{fancy} % Headers and stuff
+\fancyhead{}      % Clearing all previous headers
+\urlstyle{same}   % Something about URL
+\hypersetup{      % URL Colors
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan,
+}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\DeclareMathOperator{\Ker}{ker}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\opname}{\operatorname}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\impliedby}{\Leftarrow}
+\renewcommand{\iff}{\Leftrightarrow}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\st}{\,\middle|\,}
+
+\newcommand{\vocab}[1]{\textbf{\color{blue} #1}}
+
+\renewenvironment{proof}{{\textbf{Proof.}}}{\qed}
+\newenvironment{soln}{\noindent\textbf{Solution.}}{\hfill$\qed$}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother %Giving matrix environment optional parameter for augmented matrix
+
+\newcommand{\listhack}{\leavevmode\vspace{-1.4em}}
+
+\definecolor{DarkRed}{RGB}{230,0,0}
+
+    \mdfdefinestyle{mdgreenbox}{%
+      roundcorner=5pt,
+      linewidth=1pt,
+      skipabove=12pt,
+      innerbottommargin=9pt,
+      skipbelow=2pt,
+      linecolor=ForestGreen,
+      nobreak=true,
+      backgroundcolor=TealBlue!5,
+    }
+    \declaretheoremstyle[
+      headfont=\sffamily\bfseries\color{ForestGreen},
+      mdframed={style=mdgreenbox},
+      headpunct={\\[3pt]},
+      postheadspace={0pt}
+    ]{thmgreenbox}
+    
+    \mdfdefinestyle{mdbluebox}{%
+      roundcorner=10pt,
+      linewidth=1pt,
+      skipabove=12pt,
+      innerbottommargin=9pt,
+      skipbelow=2pt,
+      linecolor=blue,
+      nobreak=true,
+      backgroundcolor=TealBlue!5,
+    }
+    \declaretheoremstyle[
+      headfont=\sffamily\bfseries\color{MidnightBlue},
+      mdframed={style=mdbluebox},
+      headpunct={\\[3pt]},
+      postheadspace={0pt}
+    ]{thmbluebox}
+    
+    \mdfdefinestyle{mdredbox}{%
+      linewidth=0.5pt,
+      skipabove=12pt,
+      frametitleaboveskip=5pt,
+      frametitlebelowskip=0pt,
+      skipbelow=2pt,
+      frametitlefont=\bfseries,
+      innertopmargin=4pt,
+      innerbottommargin=8pt,
+      nobreak=true,
+      backgroundcolor=BrickRed!5,
+      linecolor=DarkRed,
+    }
+    \declaretheoremstyle[
+      headfont=\bfseries\color{Maroon},
+      mdframed={style=mdredbox},
+      headpunct={\\[3pt]},
+      postheadspace={0pt},
+    ]{thmredbox}
+
+    \mdfdefinestyle{mdblackbox}{%
+      linewidth=0.5pt,
+      skipabove=12pt,
+      frametitleaboveskip=5pt,
+      frametitlebelowskip=0pt,
+      skipbelow=2pt,
+      frametitlefont=\bfseries,
+      innertopmargin=4pt,
+      innerbottommargin=8pt,
+      nobreak=true,
+      backgroundcolor=Black!5,
+      linecolor=Black,
+    }
+    \declaretheoremstyle[
+      headfont=\bfseries\color{Black},
+      mdframed={style=mdblackbox},
+      headpunct={\\[3pt]},
+      postheadspace={0pt},
+    ]{thmblackbox}
+
+\theoremstyle{definition}
+
+%not numbered
+\declaretheorem[style=thmbluebox,name=Theorem.,numbered=no]{theo*}
+\declaretheorem[style=thmbluebox,name=Proposition.,numbered=no]{prop*}
+\declaretheorem[style=thmbluebox,name=Claim.,numbered=no]{claim*}
+\declaretheorem[style=thmbluebox,name=Axiom.,numbered=no]{axiom*}
+\declaretheorem[style=thmbluebox,name=Corollary.,numbered=no]{corol*}
+\declaretheorem[style=thmgreenbox,name=Lemma.,numbered=no]{lem*}
+\declaretheorem[style=thmgreenbox,name=Method.,numbered=no]{meth*}
+\declaretheorem[style=thmredbox,name=Example.,numbered=no]{ex*}
+\declaretheorem[style=thmredbox,name=Problem.,numbered=no]{prob*}
+\newtheorem*{defi*}{Definition}
+\newtheorem*{rem*}{Remark}
+\newtheorem*{fact*}{Fact}
+\newtheorem*{exer*}{Exercise}
+
+\declaretheorem[style=thmredbox,name=Problem,numbered=unless unique]{prob}
+
+\ifserkancolor
+    \ifserkanlong
+        \declaretheorem[style=thmbluebox,name=Theorem,numberwithin=subsection]{theo}
+        \declaretheorem[style=thmbluebox,name=Proposition,sibling=theo]{prop}
+        \declaretheorem[style=thmbluebox,name=Claim,sibling=theo]{claim}
+        \declaretheorem[style=thmblackbox,name=Definition,sibling=theo]{defi}
+        \declaretheorem[style=thmgreenbox,name=Lemma,sibling=theo]{lem}
+        \declaretheorem[style=thmbluebox,name=Corollary,sibling=theo]{corol}
+        \declaretheorem[style=thmbluebox,name=Axiom,sibling=theo]{axiom}
+        \declaretheorem[style=thmgreenbox,name=Method,sibling=theo]{meth}
+        \declaretheorem[style=thmredbox,name=Example,sibling=theo]{ex}
+        \declaretheorem[style=thmgreenbox,name=Remark,sibling=theo]{rem}
+        \newtheorem{exer}{Exercise}[section]
+    \else
+        \declaretheorem[style=thmbluebox,name=Theorem,numberwithin=section]{theo}
+        \declaretheorem[style=thmbluebox,name=Proposition,sibling=theo]{prop}
+        \declaretheorem[style=thmbluebox,name=Claim,sibling=theo]{claim}
+        \declaretheorem[style=thmblackbox,name=Definition,sibling=theo]{defi}
+        \declaretheorem[style=thmgreenbox,name=Lemma,sibling=theo]{lem}
+        \declaretheorem[style=thmbluebox,name=Corollary,sibling=theo]{corol}
+        \declaretheorem[style=thmbluebox,name=Axiom,sibling=theo]{axiom}
+        \declaretheorem[style=thmgreenbox,name=Method,sibling=theo]{meth}
+        \declaretheorem[style=thmredbox,name=Example,sibling=theo]{ex}
+        \declaretheorem[style=thmgreenbox,name=Remark,sibling=theo]{rem}
+        \newtheorem{exer}{Exercise}[subsection]
+    \fi
+\else
+    \newtheorem{theo}{Theorem}
+    \newtheorem{prop}{Proposition}
+    \newtheorem{lem}{Lemma}
+    \newtheorem{corol}{Corollary}
+    \newtheorem{axiom}{Axiom}
+    \newtheorem{defi}{Definition}
+    \newtheorem{exer}{Exercise}
+    \newtheorem{meth}{Method}
+    \newtheorem{rem}{Remark}
+    \newtheorem{defi}{Definition}
+\fi
+
+\endinput
