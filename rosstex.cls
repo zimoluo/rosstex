@@ -20,7 +20,7 @@
 
 \backgroundsetup{
   scale=2.4,
-  opacity=0.1,
+  opacity=0.075,
   angle=0,
   contents={\includegraphics{res/rosslogo.pdf}}
 }
