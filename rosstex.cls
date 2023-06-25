@@ -14,18 +14,26 @@
 \RequirePackage{mathtools}
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
+\RequirePackage{background}
 \setstretch{1.8}
 \setlength\parindent{0pt}
 
+\backgroundsetup{
+  scale=2.4,
+  opacity=0.1,
+  angle=0,
+  contents={\includegraphics{rosslogo.pdf}}
+}
+
 \fancypagestyle{rosstexstyle}{
-  \fancyhf{}% Clear header and footer
-  \renewcommand{\headrulewidth}{0pt}% Remove header rule
-  \fancyhead[LE,RO]{\small\thepage}% Header content - odd page numbers at top right, even at top left
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead[LE,RO]{\small\thepage}
   \fancyhead[C]{\scshape\small {{\scshape\small\ifodd\value{page} {\ifx\@psetnum\undefined
       {\small{\@title} \par}
     \else
       {\small{Problem Set {\#\@psetnum}} \par}
-    \fi}\else {\@solver}\fi}}}% Custom header content at the top center
+    \fi}\else {\@solver}\fi}}}
 
   \setlength{\headheight}{24.5042pt}
 }
