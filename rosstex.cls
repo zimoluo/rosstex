@@ -54,6 +54,7 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\U}{\mathbb{U}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Zplus}{\mathbb{Z}^{+}}
 
