@@ -120,7 +120,7 @@
 
 \titleformat{name=\section,numberless}
   {\normalfont}
-  {\MakeUppercase{\MakeUppercase{Problem}}}
+  {\MakeUppercase{\MakeUppercase{Problem}\!\!\!}}
   {1em}
   {\MakeUppercase}
   [{\titlerule[0.8pt]\smallskip}]
