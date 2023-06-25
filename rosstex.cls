@@ -170,12 +170,22 @@
 \theoremstyle{theorem}
 
 \newcounter{thmcounter}[section]
+\newcounter{emptycounter}{}
+
 \newtheorem{theorem}{Theorem}[thmcounter]
 \newtheorem{lemma}{Lemma}[thmcounter]
 \newtheorem{corollary}{Corollary}[thmcounter]
 \newtheorem{proposition}{Proposition}[thmcounter]
 \newtheorem{conjecture}{Conjecture}[thmcounter]
 \newtheorem{definition}{Definition}[thmcounter]
+
+\newtheorem{theorem*}{Theorem}[emptycounter]
+\newtheorem{lemma*}{Lemma}[emptycounter]
+\newtheorem{corollary*}{Corollary}[emptycounter]
+\newtheorem{proposition*}{Proposition}[emptycounter]
+\newtheorem{conjecture*}{Conjecture}[emptycounter]
+\newtheorem{definition*}{Definition}[emptycounter]
+
 
 
 \endinput
