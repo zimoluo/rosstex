@@ -22,7 +22,7 @@
   scale=2.4,
   opacity=0.1,
   angle=0,
-  contents={\includegraphics{rosslogo.pdf}}
+  contents={\includegraphics{res/rosslogo.pdf}}
 }
 
 \fancypagestyle{rosstexstyle}{
