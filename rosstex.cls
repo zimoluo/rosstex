@@ -114,15 +114,15 @@
 
 \titleformat{\section}
   {\normalfont}
-  {\MakeUppercase{\MakeUppercase{Problem }\arabic{section}.\!\!\!}}
-  {1em}
+  {\MakeUppercase{\MakeUppercase{Problem }\arabic{section}.}}
+  {0.4em}
   {\MakeUppercase}
   [{\titlerule[0.8pt]\smallskip}]
 
 \titleformat{name=\section,numberless}
   {\normalfont}
-  {\MakeUppercase{\MakeUppercase{Problem}\!\!\!}}
-  {1em}
+  {}
+  {0em}
   {\MakeUppercase}
   [{\titlerule[0.8pt]\smallskip}]
 
@@ -159,8 +159,6 @@
   {\MakeUppercase}
   [{\titlerule[0.8pt]\smallskip}]
 }
-
-\renewcommand\@seccntformat[1]{\csname the#1\endcsname\ \ }
 
 \newtheoremstyle{theorem}
   {\topsep}{\topsep}
