@@ -25,21 +25,9 @@
   contents={\includegraphics{res/rosslogo.pdf}}
 }
 
-\fancypagestyle{rosstexstyle}{
-  \fancyhf{}
-  \renewcommand{\headrulewidth}{0pt}
-  \fancyhead[LE,RO]{\small\thepage}
-  \fancyhead[C]{\scshape\small {{\scshape\small\ifodd\value{page} {\ifx\@psetnum\undefined
-      {\small{\@title} \par}
-    \else
-      {\small{Problem Set {\#\@psetnum}} \par}
-    \fi}\else {\@solver}\fi}}}
+\title{\@ifundefined{title}{}{\@title}}
 
-  \setlength{\headheight}{24.5042pt}
-}
-
-\pagestyle{rosstexstyle}
-
+\def\title#1{\gdef\@title{#1}\gdef\thistitle{#1}}
 
 \DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\ord}{ord}
@@ -85,9 +73,7 @@
 \newcommand{\solver}[1]{\gdef\@solver{#1}}
 \renewcommand{\author}[1]{\solver{#1}}
 
-\title{\@ifundefined{title}{}{\@title}}
-
-\renewcommand{\@maketitle}{%
+\renewcommand{\@maketitle}{
   \newpage
   \null
   \vspace{-0.5in}
@@ -111,6 +97,20 @@
   \vspace{0.5in}
 }
 
+\fancypagestyle{rosstexstyle}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead[LE,RO]{\small\thepage}
+  \fancyhead[C]{\scshape\small {{\scshape\small\ifodd\value{page} {\ifx\@psetnum\undefined
+      {\small{\thistitle} \par}
+    \else
+      {\small{Problem Set {\#\@psetnum}} \par}
+    \fi}\else {\small\@solver}\fi}}}
+
+  \setlength{\headheight}{24.5042pt}
+}
+
+\pagestyle{rosstexstyle}
 
 \titleformat{\section}
   {\normalfont}
