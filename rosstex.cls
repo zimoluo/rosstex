@@ -114,7 +114,7 @@
 
 \titleformat{\section}
   {\normalfont}
-  {\MakeUppercase{\MakeUppercase{Problem }\arabic{section}.}}
+  {\MakeUppercase{\MakeUppercase{Problem }\arabic{section}.\!\!\!}}
   {1em}
   {\MakeUppercase}
   [{\titlerule[0.8pt]\smallskip}]
