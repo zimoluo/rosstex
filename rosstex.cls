@@ -15,6 +15,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage{background}
+\RequirePackage{pdfpages}
 \setstretch{1.8}
 \setlength\parindent{0pt}
 
