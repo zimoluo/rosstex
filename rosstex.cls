@@ -169,7 +169,7 @@
 \theoremstyle{theorem}
 
 \newcounter{thmcounter}[section]
-\newcounter{emptycounter}{}
+\newcounter{emptycounter}
 
 \newtheorem{theorem}{Theorem}[thmcounter]
 \newtheorem{lemma}{Lemma}[thmcounter]
