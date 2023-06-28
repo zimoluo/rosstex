@@ -209,6 +209,10 @@
 {\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Definition \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
 {\end{tcolorbox}\par}
 
+\newenvironment{problem}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Problem \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
 
 
 \newenvironment{theorem*}[1][]
@@ -239,6 +243,10 @@
 {\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Definition\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
 {\end{tcolorbox}\par}
 
+\newenvironment{problem*}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Problem\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
 
 
 \newenvironment{theorem**}[1][]
@@ -267,6 +275,10 @@
 
 \newenvironment{definition**}[1][]
 {\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Definition \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{problem**}[1][]
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Problem \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
 {\end{tcolorbox}\par}
 
 
