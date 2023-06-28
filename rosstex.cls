@@ -7,17 +7,50 @@
 
 \LoadClass{amsart}
 
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{graphicx}
 \RequirePackage[margin=0.75in]{geometry}
 \RequirePackage{setspace}
 \RequirePackage{graphicx}
 \RequirePackage{tikz}
 \RequirePackage{mathtools}
+\RequirePackage[framemethod=tikz]{mdframed}
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage{background}
 \RequirePackage{pdfpages}
-\setstretch{1.8}
+\RequirePackage{xcolor}
+\RequirePackage{thmtools}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black,
+    linktoc=all
+}
+
+\definecolor{pgreen}{HTML}{047101}
+\definecolor{pred}{HTML}{FF634D}
+\definecolor{pblue}{HTML}{0376BB}
+\definecolor{plightgreen}{HTML}{D0FFB8}
+\definecolor{plightblue}{HTML}{B3E2FF}
+\definecolor{plightred}{HTML}{FE968D}
+\definecolor{pyellow}{HTML}{F7BA00}
+\definecolor{psilver}{HTML}{D5D5D5}
+\definecolor{plightgray}{HTML}{929292}
+\definecolor{pgray}{HTML}{929292}
+\definecolor{pblack}{HTML}{000000}
+\definecolor{pwhite}{HTML}{FFFFFF}
+
+\setstretch{1.5}
 \setlength\parindent{0pt}
+
+\usetikzlibrary{arrows,scopes,positioning,cd,calc}
 
 \backgroundsetup{
   scale=2.4,
@@ -51,24 +84,6 @@
 \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
-
-\renewcommand{\implies}{\Rightarrow}
-\renewcommand{\impliedby}{\Leftarrow}
-\renewcommand{\iff}{\Leftrightarrow}
-
-\RequirePackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    urlcolor=black,
-    citecolor=black,
-    linktoc=all
-}
-
-\RequirePackage{amsmath}
-\RequirePackage{amsthm}
-\RequirePackage{amssymb}
-\RequirePackage{graphicx}
 
 \newcommand{\psetnum}[1]{\gdef\@psetnum{#1}}
 \newcommand{\solver}[1]{\gdef\@solver{#1}}
@@ -115,16 +130,16 @@
 
 \titleformat{\section}
   {\normalfont}
-  {\MakeUppercase{\MakeUppercase{Problem }\arabic{section}.}}
+  {\large\MakeUppercase{\MakeUppercase{Problem }\arabic{section}.}}
   {0.4em}
-  {\MakeUppercase}
+  {\large}
   [{\titlerule[0.8pt]\smallskip}]
 
 \titleformat{name=\section,numberless}
   {\normalfont}
   {}
   {0em}
-  {\MakeUppercase}
+  {\large}
   [{\titlerule[0.8pt]\smallskip}]
 
 \titleformat{\subsection}[runin]
@@ -161,30 +176,98 @@
   [{\titlerule[0.8pt]\smallskip}]
 }
 
-\newtheoremstyle{theorem}
-  {\topsep}{\topsep}
-  {\itshape}{}
-  {\bfseries}{}
-  {\newline}
-  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
-\theoremstyle{theorem}
-
 \newcounter{thmcounter}[section]
-\newcounter{emptycounter}
+\newcounter{thmcounternosection}
 
-\newtheorem{theorem}{Theorem}[thmcounter]
-\newtheorem{lemma}{Lemma}[thmcounter]
-\newtheorem{corollary}{Corollary}[thmcounter]
-\newtheorem{proposition}{Proposition}[thmcounter]
-\newtheorem{conjecture}{Conjecture}[thmcounter]
-\newtheorem{definition}{Definition}[thmcounter]
+\renewcommand{\thethmcounter}{\thesection.\arabic{thmcounter}}
 
-\newtheorem{theorem*}{Theorem}[emptycounter]
-\newtheorem{lemma*}{Lemma}[emptycounter]
-\newtheorem{corollary*}{Corollary}[emptycounter]
-\newtheorem{proposition*}{Proposition}[emptycounter]
-\newtheorem{conjecture*}{Conjecture}[emptycounter]
-\newtheorem{definition*}{Definition}[emptycounter]
+\newenvironment{theorem}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Theorem \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{lemma}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Lemma \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{corollary}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Corollary \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{proposition}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Proposition \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{statement}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Statement \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{conjecture}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Conjecture \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{definition}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Definition \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+
+
+\newenvironment{theorem*}[1][]
+{\par\begin{tcolorbox}[title={Theorem\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{lemma*}[1][]
+{\par\begin{tcolorbox}[title={Lemma\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{corollary*}[1][]
+{\par\begin{tcolorbox}[title={Corollary\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{proposition*}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Proposition\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{statement*}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Statement\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{conjecture*}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Conjecture\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{definition*}[1][]
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Definition\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+
+
+\newenvironment{theorem**}[1][]
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Theorem \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{lemma**}[1][]
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Lemma \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{corollary**}[1][]
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Corollary \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{proposition**}[1][]
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Proposition \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{statement**}[1][]
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Statement \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{conjecture**}[1][]
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Conjecture \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
+
+\newenvironment{definition**}[1][]
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Definition \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\end{tcolorbox}\par}
 
 
 
