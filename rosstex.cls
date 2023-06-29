@@ -11,7 +11,7 @@
 \RequirePackage{amsthm}
 \RequirePackage{amssymb}
 \RequirePackage{graphicx}
-\RequirePackage[margin=0.75in]{geometry}
+\RequirePackage[margin=0.6in]{geometry}
 \RequirePackage{setspace}
 \RequirePackage{graphicx}
 \RequirePackage{tikz}
