@@ -182,103 +182,103 @@
 \renewcommand{\thethmcounter}{\thesection.\arabic{thmcounter}}
 
 \newenvironment{theorem}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Theorem \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Theorem \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{lemma}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Lemma \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Lemma \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{corollary}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Corollary \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Corollary \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{proposition}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Proposition \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Proposition \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{statement}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Statement \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Statement \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{conjecture}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Conjecture \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Conjecture \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{definition}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Definition \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Definition \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{problem}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Problem \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Problem \thesection.\arabic{thmcounter}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 
 
 \newenvironment{theorem*}[1][]
-{\par\begin{tcolorbox}[title={Theorem\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\begin{tcolorbox}[title={Theorem\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{lemma*}[1][]
-{\par\begin{tcolorbox}[title={Lemma\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\begin{tcolorbox}[title={Lemma\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{corollary*}[1][]
-{\par\begin{tcolorbox}[title={Corollary\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\begin{tcolorbox}[title={Corollary\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{proposition*}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Proposition\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Proposition\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{statement*}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Statement\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Statement\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{conjecture*}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Conjecture\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Conjecture\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{definition*}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Definition\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Definition\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{problem*}[1][]
-{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Problem\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounter}\begin{tcolorbox}[title={Problem\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 
 
 \newenvironment{theorem**}[1][]
-{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Theorem \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Theorem \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{lemma**}[1][]
-{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Lemma \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Lemma \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{corollary**}[1][]
-{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Corollary \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Corollary \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{proposition**}[1][]
-{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Proposition \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Proposition \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{statement**}[1][]
-{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Statement \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Statement \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{conjecture**}[1][]
-{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Conjecture \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Conjecture \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{definition**}[1][]
-{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Definition \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Definition \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 \newenvironment{problem**}[1][]
-{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Problem \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em]\itshape}
+{\par\refstepcounter{thmcounternosection}\begin{tcolorbox}[title={Problem \arabic{thmcounternosection}\ifx\\#1\\\else: #1\fi}, colback=black!1, colframe=black!15, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=1]\itshape}
 {\end{tcolorbox}\par}
 
 
