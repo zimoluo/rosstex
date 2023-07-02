@@ -1,4 +1,4 @@
-FILE_NAME = 'notex.cls'
+FILE_NAME = 'rosstex.cls'
 
 class THMBuilder:
     def __init__(self):
