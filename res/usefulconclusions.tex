@@ -67,8 +67,11 @@ For $a, b \in \Zplus$, we can write
 \end{theorem**}
 
     \begin{proof}
-    Let us define $S$ to be the set of polynomials $r(x)$ with degree $n$ with $r(x) = f(x) - q(x) \cdot g(x)$.\\\\
-    We first show that S is non empty. Simply taking $q(x)$ gives $r(x) = f(x)$, which is valid. Therefore $r(x)=f(x)$ must be in the set S.\\\\
-    If $0$ is in $S$, then we are done, since we can take $r(x)=0$ and $f(x) = q(x) \cdot g(x)+r(x)$. Therefore let $0 \not \in S$. Since degrees are nonnegative integers, without 0, it must be positive. We can therefore apply WOP to $S$ and get a polynomial $r_l(x)$ in S with minimal degree and its associated $q_l(x)$. By definition, $\deg(r_l(x)) >  \deg(g(x))$. Let the leading coeffecient of $r_l(x)$ be $L$, and $g(x)$ be $G$. Since $G$ is a unit in $m$, let the inverse of $G$ mod m be $G^{-1}$. We then know $L \equiv L \cdot (G \cdot G^{-1}) \bmod m$. \\\\
+    Let us define $S$ to be the set of polynomials $r(x)$ with degree $n$ with $r(x) = f(x) - q(x) \cdot g(x)$.
+
+    We first show that $S$ is non empty. Simply taking $q(x)$ gives $r(x) = f(x)$, which is valid. Therefore $r(x)=f(x)$ must be in the set S.
+
+    If $0$ is in $S$, then we are done, since we can take $r(x)=0$ and $f(x) = q(x) \cdot g(x)+r(x)$. Therefore let $0 \notin S$. Since degrees are nonnegative integers, without $0$, it must be positive. We can therefore apply WOP to $S$ and get a polynomial $r_l(x)$ in S with minimal degree and its associated $q_l(x)$. By definition, $\deg(r_l(x)) >  \deg(g(x))$. Let the leading coeffecient of $r_l(x)$ be $L$, and $g(x)$ be $G$. Since $G$ is a unit in $m$, let the inverse of $G$ mod m be $G^{-1}$. We then know $L \equiv L \cdot (G \cdot G^{-1}) \pmod m$.
+
     Assume for contradiction that $r_l(x)$ has degree $n \geq \deg(g(x))$. Now consider the polynomial $p(x) = r_l(x)-(L \cdot G^{-1})(x^{\deg(r_l(x))-\deg(g(x))})g(x)$. Note that $\deg(p(x)) < \deg(r_l(x))$, since the leading term of $r_l(x)$ is cancelled. But $p(x)$ is also in the set $S$, since we have $p(x) = f(x) - (r_q(x) +(L \cdot G^{-1})(x^{\deg(r_l(x))-\deg(g(x))}) )g(x)$. This raises a contradiction, since by WOP we assumed $r_l(x)$ has the minimal degree. Therefore, there exist a $r(x)$ with degree $n$ such that $0 \geq n < \deg(g(x))$.
 \end{proof}
