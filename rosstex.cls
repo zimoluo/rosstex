@@ -100,6 +100,7 @@
     \node[inner sep=0pt] (OSS) at (1.4em, 0.25em) {\scalebox{0.84}{OSS}};
     \node[inner sep=0pt] (TeX) at (2.8em, -0.15em) {\TeX};
 }}
+
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
