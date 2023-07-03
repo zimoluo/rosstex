@@ -153,11 +153,12 @@
 \fancypagestyle{rosstexstyle}{
   \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}
-  \fancyhead[LE,RO]{\small\thepage}
+  \fancyhead[LE,RO]{\scshape\small\thepage}
+  \fancyhead[LO,RE]{\scshape\small\@date}
   \fancyhead[C]{\scshape\small {{\scshape\small\ifodd\value{page} {\ifx\@psetnum\undefined
-      {\small{\thistitle} \par}
+      {\small{\thistitle}}
     \else
-      {\small{Problem Set {\#\@psetnum}} \par}
+      {\small{Problem Set {\#\@psetnum}}}
     \fi}\else {\small\@solver}\fi}}}
 
   \setlength{\headheight}{24.5042pt}
