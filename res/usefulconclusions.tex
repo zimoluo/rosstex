@@ -53,6 +53,14 @@ For $a, b \in \Zplus$, we can write
     \end{equation*}
 \end{proof}
 
+\begin{theorem**}[Converse of Bezout's Identity]
+    For $a, b \in \Z$, if there exists some $x, y\in \Z$ such that $ax+by=1$, then $\gcd(a,b)=1$.
+\end{theorem**}
+
+\begin{proof}
+    Consider an arbitrary common factor $d$ of $a$ and $b$. Since $d\mid a$ and $d\mid b$, it must follow that $d\mid ax+by$ since $ax+by$ is a linear combination. But this means $d \mid 1$, so the only choice left for $d$ is $1$. This goes for any common divisor of $a$ and $b$, so $\gcd(a,b)=1$.
+\end{proof}
+
 \begin{theorem**}
     $\gcd(m, n) = 1$ implies $\gcd(mn, m+n) = 1$
 \end{theorem**}
