@@ -110,6 +110,10 @@
 \newcommand{\solver}[1]{\gdef\@solver{#1}}
 \renewcommand{\author}[1]{\solver{#1}}
 
+\newcommand{\defaultheader}{Problem}
+
+\newcommand{\headertitle}[1]{\renewcommand{\defaultheader}{#1}}
+
 \let\originalproof\proof
 \let\endoriginalproof\endproof
 \newenvironment{legacyproof}{
@@ -120,8 +124,8 @@
 \let\proof\undefined
 \let\endproof\undefined
 
-\newenvironment{proof}
-{\par\begin{tcolorbox}[title={\textit{Proof.}}, colback=pshadegreen!05, colframe=pshadegreen!25, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=0.8,breakable,pad at break*=0.2em]}
+\newenvironment{proof}[1][]
+{\par\begin{tcolorbox}[title={\textit{Proof}\ifx\\#1\\\textit{\!.}\else\textit{\!:} #1\fi}, colback=pshadegreen!05, colframe=pshadegreen!25, coltitle=black, fonttitle=\bfseries,boxsep=2.2mm,left=0.2em,right=0.2em,top=0.2em,bottom=0.2em,enhanced,opacityframe=.75,opacityback=0.8,breakable,pad at break*=0.2em]}
 {\hfill \qedsymbol\end{tcolorbox}\par}
 
 \renewcommand{\@maketitle}{
@@ -168,7 +172,7 @@
 
 \titleformat{\section}
   {\normalfont}
-  {\Large\MakeUppercase{\MakeUppercase{Problem }\arabic{section}.}}
+  {\Large\MakeUppercase{\MakeUppercase{\defaultheader\ }\arabic{section}.}}
   {0.4em}
   {\Large}
   [{\titlerule[0.8pt]\smallskip}]
