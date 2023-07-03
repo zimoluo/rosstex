@@ -140,6 +140,8 @@
   \vspace{0.4in}
 }
 
+\renewcommand{\refname}{\MakeUppercase{References}}
+
 \fancypagestyle{rosstexstyle}{
   \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}
