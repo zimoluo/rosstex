@@ -194,14 +194,22 @@
   {0.5em}
 
 \renewcommand{\appendix}{
-  \setcounter{section}{0}
-  \titleformat{\section}
-    {\normalfont}
-    {\Large\MakeUppercase{Appendix \alph{section}. }}
-    {0em}
-    {\Large}
-    [{\titlerule[0.8pt]\smallskip}]
-  }
+\setcounter{section}{0}
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\titleformat{\section}
+  {\normalfont}
+  {\Large\MakeUppercase{Appendix \thesection. }}
+  {0em}
+  {\Large}
+  [{\titlerule[0.8pt]\smallskip}]
+\titleformat{name=\section,numberless}
+  {\normalfont}
+  {\Large\MakeUppercase{\MakeUppercase{Appendix}.\ }}
+  {0em}
+  {\Large}
+  [{\titlerule[0.8pt]\smallskip}]
+}
 
 \newcounter{thmcounter}[section]
 \newcounter{thmcounternosection}
