@@ -93,7 +93,7 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Zplus}{\mathbb{Z}^{+}}
 
-\newcommand{\NoTeX}{N\kern-.05em\raisebox{.4ex}{\scalebox{0.84}{O}}\kern-.05em\TeX}
+\newcommand{\NoTeX}{N\kern-.15em\raisebox{.4ex}{\scalebox{0.84}{O}}\kern-.25em\TeX}
 \newcommand{\RossTeX}{\tikz[baseline=(R.base)]{
     \node[draw, circle, inner sep=0pt, minimum size=1.8em] at (0em, 0) (circle) {};
     \node[inner sep=0pt] (R) at (0.01em, 0) {\raisebox{-0.4ex}{\scalebox{1.33}{$\mathbb{R}$}}};
