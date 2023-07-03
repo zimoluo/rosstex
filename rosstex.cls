@@ -57,6 +57,7 @@
 
 \setstretch{1.5}
 \setlength\parindent{0pt}
+\setlength{\parskip}{0.5em}
 
 \usetikzlibrary{arrows,scopes,positioning,cd,calc}
 
