@@ -196,7 +196,6 @@
 \renewcommand{\appendix}{
 \setcounter{section}{0}
 \renewcommand{\thesection}{\Alph{section}}
-\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 \titleformat{\section}
   {\normalfont}
   {\Large\MakeUppercase{Appendix \thesection. }}
